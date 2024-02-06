@@ -2,6 +2,7 @@ import { View, Button, Text, SafeAreaView, StyleSheet } from "react-native";
 import React, { Component } from 'react'
 import Icon from "react-native-vector-icons/Ionicons";
 
+import NewApp from "../Writings/NewApp"
 class HomeScreen extends Component {
     // state = {  } 
 
@@ -30,10 +31,11 @@ class HomeScreen extends Component {
             // </SafeAreaView>
 
             <SafeAreaView style={{ flex: 1 }}>
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#3BB9FF' }}>
+                {/* <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'#3BB9FF' }}>
                     <Text>Home Screen</Text>
                     <Icon name={'home'} size={20} color={'#000'} />
-                </View>
+                </View> */}
+                <NewApp></NewApp>
             </SafeAreaView>
 
             // <View>

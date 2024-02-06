@@ -12,16 +12,41 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
 
 export default function Bottomnavigator() {
+
+  const tabScreenOptions = {
+    common: {
+      headerShown: true,
+    },
+    home: {
+      tabBarLabel: "HomeScreen",
+      title: "Home",
+    },
+    profile: {
+      tabBarLabel: "Profile",
+      title: "Profile",
+    },
+    notification: {
+      tabBarLabel: "Notification",
+      title: "Notification",
+    },
+    settings: {
+      tabBarLabel: "Settings",
+      title: "Settings",
+    },
+  };
+
   return (
     <Tab.Navigator
     screenOptions={(route)=>({
     headerShown:false,
+    tabBarActiveTintColor:"#000", //icon color
+    tabBarInactiveTintColor:"#c1c1c1", //options
     tabBarIcon:({color, size, focused}:any)=>{
       let iconName;
       if(route.route.name === "HomeScr"){
         iconName = focused ? "home" : "home-outline";
       }else if(route.route.name === "Profile"){
-        iconName = focused ? "person" : "person-sharp"; // ios-person-circle-outline
+        iconName = focused ? "person" : "person-sharp"; // ios+iconsname
       }else if(route.route.name === "Notifcation"){
         iconName = focused ? "notifications" : "notifications-circle";
       }else if(route.route.name === "Settings"){
@@ -31,10 +56,10 @@ export default function Bottomnavigator() {
     // eslint-disable-next-line comma-dangle
     }
     })}>
-       <Tab.Screen name="HomeScr" component={HomeScreen} />{/* HomeScreen */}
-       <Tab.Screen name="Profile" component={ProfileScreen} />
-       <Tab.Screen name="Notifcation" component={NotifcationScreen} />
-       <Tab.Screen name="Settings" component={SettingsScreen} />
+       <Tab.Screen name="HomeScr" component={HomeScreen} options={{ ...tabScreenOptions.common, ...tabScreenOptions.home }}/>{/* HomeScreen */}
+       <Tab.Screen name="Profile" component={ProfileScreen} options={{ ...tabScreenOptions.common, ...tabScreenOptions.profile }}/>
+       <Tab.Screen name="Notifcation" component={NotifcationScreen} options={{ ...tabScreenOptions.common, ...tabScreenOptions.notification }} />
+       <Tab.Screen name="Settings" component={SettingsScreen} options={{ ...tabScreenOptions.common, ...tabScreenOptions.settings }} />
     </Tab.Navigator>
   );
 }
