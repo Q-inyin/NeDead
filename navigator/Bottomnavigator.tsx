@@ -4,6 +4,9 @@ import HomeScreen from "../pages/Tabbar/HomeScreen"
 import ProfileScreen from "../pages/Tabbar/ProfileScreen"
 import NotifcationScreen from "../pages/Tabbar/NotifcationScreen"
 import SettingsScreen from "../pages/Tabbar/SettingsScreen"
+
+import Ardark from "../animation/drakandmon"
+
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/Ionicons";
 

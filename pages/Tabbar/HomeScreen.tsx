@@ -3,8 +3,25 @@ import React, { Component } from 'react'
 import Icon from "react-native-vector-icons/Ionicons";
 
 import NewApp from "../Writings/NewApp"
+import Header from '../../animation/drakandmon';
 class HomeScreen extends Component {
-    // state = {  } 
+
+    state = { 
+        active: false,
+        theme : 'dark'
+    }
+    
+    async handlePress(){
+        if (!this.state.active) {
+          this.state.active =true 
+          if (this.state.theme === 'dark') {
+            this.state.theme = 'light'
+          } else {
+            this.state.theme = 'dark'
+          }
+          this.state.active = false
+        }
+    }
 
     render() {
         // const { navigation } = this.props;
@@ -35,6 +52,7 @@ class HomeScreen extends Component {
                     <Text>Home Screen</Text>
                     <Icon name={'home'} size={20} color={'#000'} />
                 </View> */}
+                <Header handlePress={this.handlePress} theme={this.state.theme} />
                 <NewApp></NewApp>
             </SafeAreaView>
 
