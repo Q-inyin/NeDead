@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { RewardedAd, RewardedAdEventType, TestIds } from 'react-native-google-mobile-ads';
 
-const adUnitId = __DEV__ ? TestIds.REWARDED : 'ca-app-pub-3755197188483678~2544695959';
+const adUnitId = __DEV__ ? TestIds.REWARDED : 'ca-app-pub-9406439464517960/6564738842';
 
 const rewarded = RewardedAd.createForAdRequest(adUnitId, {
   keywords: ['fashion', 'clothing'],
